@@ -3,7 +3,7 @@
                 "region":         "us-east-1",
                 "aws_subnet_id": "subnet-0fdd1da8c6b76e2af",
         "aws_vpc_id": "vpc-00e2284bbb39d5a29",
-        "aws_ami_name": "ubuntu-custom-AMI-{{timestamp}}"
+        "aws_ami_name": "wordpresss-app-AMI-{{timestamp}}"
     },
     "builders": [
         {
@@ -33,11 +33,11 @@
                         "communicator": "ssh",
 		"tags": {
         "OS_Version": "Ubuntu",
-        "Name": "ubuntu-custom-AMI"
+        "Name": "wordpress-app-AMI"
       },
 		"run_tags" : {
         "OS_Version": "Ubuntu",
-        "Name": "ubuntu-custom-AMI"
+        "Name": "wordpress-app-AMI"
       }
         }
     ],
