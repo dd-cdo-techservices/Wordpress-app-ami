@@ -1,10 +1,5 @@
 #!/bin/bash -e
 
-MYSQLPASSWORD="Password@123"
-WPDBNAME="blog"
-WPUSER="root" 
-WPPWD="Password@123"
-
 
 echo "Updating repo information...\n"
 
@@ -16,20 +11,6 @@ echo "Updating repo information...\n"
 echo "Installing Apache package now...\n"
 
 sudo apt-get -y install apache2
-
-
-#
-#Installing MySQL 5.7 which is available in default repo for Ubuntu 16.06
-#
-
-echo "Installing MySQL 5.7 now...\n"
-
-sudo echo "mysql-server-5.7 mysql-server/root_password password Password@123" | sudo debconf-set-selections
-sudo echo "mysql-server-5.7 mysql-server/root_password_again password Password@123" | sudo debconf-set-selections
-sudo apt-get -y install mysql-server-5.7 mysql-client
-
-#mysql -u root -p root -e "use mysql; UPDATE user SET authentication_string=PASSWORD('$MYSQLPASSWORD') WHERE User='root'; flush privileges;" >> $LOGFILE 2>&1
-
 
 
 #
